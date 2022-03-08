@@ -37,7 +37,7 @@ app.get('/messages', async (req: any, resp: any) => {
     await consumer.connect()
     await consumer.subscribe({topic: 'test-topic', fromBeginning: true})
     await consumer.run({
-        eachMessage: async ({message}) => {
+        eachMessage: async ({message}:any) => {
             console.log({
                 value: message.value.toString(),
             })
